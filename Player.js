@@ -4,8 +4,6 @@ function Player()
 	this.y = 200;
 	this.width = 50;
 	this.height = 50;
-
-	//this.Player = new Player();
 }
 
 Player.prototype.checkCollision = function (e)

@@ -9,9 +9,7 @@ function Game()
 	initCanvas();
 
 	player = new Player();
-	goal = new Goal();
-	
-	
+	goal = new Goal();	
 }
 
 Game.prototype.test = function(e)
@@ -48,7 +46,7 @@ Game.prototype.gameLoop = function()
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-	draw();
+	game.draw();
 
 	window.requestAnimationFrame(game.gameLoop);
 }
@@ -64,10 +62,8 @@ function initCanvas()
 	canvas.height = window.innerHeight;
 }
 
-function draw()
+Game.prototype.draw = function()
 {
-	//ctx.fillStyle = rgb(Math.random() * 255,Math.random() * 255,Math.random() * 255);
-	//ctx.fillRect(Math.random() * canvas.width,Math.random() * canvas.height,Math.random() * 100,Math.random() * 100);
 	ctx.fillStyle = rgb(255,0,0);
 	ctx.fillRect(player.x, player.y, player.width, player.height);
 
@@ -90,8 +86,6 @@ function draw()
 		//Any idea what save and restore do?
 		ctx.restore();
 	}
-
-
 }
 
 /*function for rgb for convenience*/
